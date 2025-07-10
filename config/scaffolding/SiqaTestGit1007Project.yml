@@ -14,21 +14,49 @@ packages:
   gitUsername: prabhakarsag
   gitBranch: main
 - name: JMS2waySSL
+  version: "1.0"
   gitServerName: SIQAPsurGit
   gitUrl: https://github.com/prabhakarsag
   gitUsername: prabhakarsag
   gitBranch: main
 - name: JMSTest
+  version: "1.0"
   gitServerName: SIQAPsurGit
   gitUrl: https://github.com/prabhakarsag
   gitUsername: prabhakarsag
   gitBranch: main
 services:
+- serviceName: project.siqatestgit1007.integrations:JMS_JNDI_SSL
+  packages:
+  - name: SiqaTestGit1007Project
+    version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
+  - name: SSL_JDBC_Test
+    version: "1.0"
+  - name: JMSTest
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+- serviceName: publisher:publisher
+  packages:
+  - name: JMSTest
+    version: "1.0"
+- serviceName: pub.jms:send
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2070
 - serviceName: project.siqatestgit1007.integrations:SSL_JDBC_test
   packages:
   - name: SiqaTestGit1007Project
     version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
   - name: SSL_JDBC_Test
+    version: "1.0"
+  - name: JMSTest
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
